@@ -1,14 +1,17 @@
 package Bank_Management;
-
-
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-// import javax.crypto.spec.DESKeySpec;
+
 import javax.swing.*;
-
-public class Login extends JFrame{
+//for actions implement interface action listener
+public class Login extends JFrame implements ActionListener{
+    //globally defining the buttons
+    JButton loginButton, signUpButton, clearButton;
+    JTextField cardTextField;
+    JPasswordField pinTextField;
     Login() {
         setTitle("Automated Teller Machine");
         //To not use any layout
@@ -34,8 +37,9 @@ public class Login extends JFrame{
         add(cardNo);
 
         //add an entry
-        JTextField cardTextField = new JTextField();
+        cardTextField = new JTextField();
         cardTextField.setBounds(300, 150, 230, 30);
+        cardTextField.setFont(new Font("Arial", Font.BOLD, 12));
         add(cardTextField);
 
         JLabel pin = new JLabel("PIN");
@@ -43,27 +47,31 @@ public class Login extends JFrame{
         pin.setBounds(120,220,400,30);
         add(pin);
         
-        JTextField pinTextField = new JTextField();
+        pinTextField = new JPasswordField();
         pinTextField.setBounds(300, 220, 230, 30);
+        pinTextField.setFont(new Font("Arial",Font.BOLD, 12));
         add(pinTextField);
 
         //add button
-        JButton loginButton = new JButton("SIGN IN");
+        loginButton = new JButton("SIGN IN");
         loginButton.setBounds(300, 300, 100, 30);
         loginButton.setBackground(Color.black);
         loginButton.setForeground(Color.white);
+        loginButton.addActionListener(this);
         add(loginButton);
 
-        JButton clearButton = new JButton("Clear");
+        clearButton = new JButton("Clear");
         clearButton.setBounds(430, 300, 100, 30);
         clearButton.setBackground(Color.black);
         clearButton.setForeground(Color.white);
+        clearButton.addActionListener(this);
         add(clearButton);
 
-        JButton signUpButton = new JButton ("Clear");
+        signUpButton = new JButton ("Sign Up");
         signUpButton.setBounds(300, 350, 230, 30);
         signUpButton.setBackground(Color.black);
         signUpButton.setForeground(Color.white);
+        signUpButton.addActionListener(this);
         add(signUpButton);
         
         //Change the frame background
@@ -75,6 +83,22 @@ public class Login extends JFrame{
         //Making the frame visible using setVisible()
         setVisible(true);
         setLocation(350,200);
+    }
+    //as action listner is interface need to override the abstract methods
+    public void actionPerformed(ActionEvent ae){
+        //define what happens when button is clicked
+        //source of the button clicked
+        if(ae.getSource() == clearButton){
+            cardTextField.setText("");
+            pinTextField.setText("");
+        }
+        else if(ae.getSource() == loginButton){
+
+        }
+        else if(ae.getSource() == signUpButton){
+
+        }
+
     }
     public static void main(String[] args) {
          new Login();
