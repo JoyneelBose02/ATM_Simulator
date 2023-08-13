@@ -19,16 +19,28 @@ public class SignUpOne extends JFrame{
         personalDetails.setFont(new Font("Raleway", Font.BOLD, 18));
         personalDetails.setBounds(300,60,400,40);
         add(personalDetails);
-        
+        //name label
         JLabel name = new JLabel("Name:");
         name.setFont(new Font("Raleway", Font.BOLD, 18));
         name.setBounds(140, 120, 100, 40);
         add(name);
         
+        //name textfield
+        JTextField nameTextField = new JTextField();
+        nameTextField.setBounds(350, 120, 250, 35);
+        nameTextField.setFont(new Font("Arial", Font.BOLD, 12));
+        add(nameTextField);
+        
         JLabel fname = new JLabel("Father's Name: ");
         fname.setFont(new Font("Raleway", Font.BOLD, 18));
         fname.setBounds(140, 180, 200, 40);
         add(fname);
+
+        //fname textfield
+        JTextField fnameTextField = new JTextField();
+        fnameTextField.setBounds(350, 180, 250, 35);
+        fnameTextField.setFont(new Font("Arial", Font.BOLD, 12));
+        add(fnameTextField);
 
         JLabel dob = new JLabel("Date of Birth:");
         dob.setFont(new Font("Raleway", Font.BOLD, 18));
