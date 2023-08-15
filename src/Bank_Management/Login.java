@@ -26,7 +26,7 @@ public class Login extends JFrame implements ActionListener{
         add(label);
 
         //Adding text to the frame
-        JLabel text = new JLabel("Welcome to ATM");
+        JLabel text = new JLabel("ATM Simulator");
         text.setFont(new Font("Osward", Font.BOLD,30));
         text.setBounds(200,40,400,30);
         add(text);
@@ -96,7 +96,8 @@ public class Login extends JFrame implements ActionListener{
 
         }
         else if(ae.getSource() == signUpButton){
-
+            setVisible(false);
+            new SignUpOne().setVisible(true);
         }
 
     }
